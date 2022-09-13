@@ -1,0 +1,33 @@
+{
+    "name": "Kaggle NoteBook Status",
+    "version": "1.0",
+    "manifest_version": 3,
+    "description": "Kaggle NoteBookの既読・未読のStatusを分かりやすくします",
+    "content_scripts": [
+        {
+            "matches": [
+                "https://www.kaggle.com/competitions*"
+            ],
+            "css": [
+                "styles.css"
+            ]
+        }
+    ],
+    "action": {
+        "default_icon": {
+            "16": "images/KaggleColorIcon.png",
+            "24": "images/KaggleColorIcon.png",
+            "32": "images/KaggleColorIcon.png"
+        }
+    },
+    "permissions": [
+        "history",
+        "tabs",
+        "activeTab",
+        "scripting"
+    ],
+    "host_permissions":["https://*/*"],
+    "background": {
+        "service_worker": "background.js"
+    }
+}
